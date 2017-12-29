@@ -30,4 +30,7 @@ docker run -it gcr.io/tensorflow/tensorflow:latest-devel
    Status: Downloaded newer image for gcr.io/tensorflow/tensorflow:latest-devel
 ```
 3) Exit the Docker image to go back into your local environment by using `exit` or `logout` and compile 2 (or more) image datasets to have your classifier classify (I picked Bill Gates/Steve Jobs). Put these images in seperate folders within the `/tf_files` directory
-3a) To make the task less tedious, use the `googleImageURLDownloader.py` script in `/utils`
+3a) To make the task less tedious, use the `googleImageURLDownloader.py` script in `/utils`. The directories will be automatically created for you. [Original Source](https://github.com/speedious/google-images-download/blob/720b464cc2dbe8a6cb0b9004362addf3d93ce65a/google-images-download.py)
+3b) The script is limited to downloading 100 images per search query (*since scripting image requests is already against Google's TOS*) and it is reocmmended to have more images. To quickly download more images, use [this Chrome browser extension](https://chrome.google.com/webstore/detail/fatkun-batch-download-ima/nnjjahlikiabnchcpehcpkdeckfgnohf) and make sure to enable the `rename based on` field under `More Options` and to disable `Ask where to save each file before downloading`.
+3c) Make sure you at least skim through the dataset and delete any images that are not related to your keyword.
+4) 
