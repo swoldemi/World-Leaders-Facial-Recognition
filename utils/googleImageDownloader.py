@@ -148,16 +148,16 @@ while i < len(search_keyword):
                     items[k], headers={
                         "User-Agent": "Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.27 Safari/537.17"})
                 response = urllib.request.urlopen(req, None, 15)
-                output_file = open(search_keywords + "/" +
+                output_file = open('./tf-files/'.format(search_keywords) + "/" +
                                    str(k + 1) + ".jpg", 'wb')
                 data = response.read()
                 output_file.write(data)
                 response.close()
                 print("completed ====> " + str(k + 1))
                 k = k + 1
-            except IOError:  # If there is any IOError
+            except IOError as e:  # If there is any IOError
                 errorCount += 1
-                print("IOError on image " + str(k + 1))
+                print("IOError on image " + str(k + 1) + ":" + str(e))
                 k = k + 1
             except urllib.error.HTTPError as e:  # If there is any HTTPError
                 errorCount += 1
@@ -175,7 +175,7 @@ while i < len(search_keyword):
                     items[k], headers={
                         "User-Agent": "Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.27 Safari/537.17"})
                 response = urlopen(req, None, 15)
-                output_file = open(search_keywords + "/" +
+                output_file = open('./tf-files/'.format(search_keywords) + "/" +
                                    str(k + 1) + ".jpg", 'wb')
                 data = response.read()
                 output_file.write(data)
