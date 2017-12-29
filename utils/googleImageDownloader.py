@@ -95,7 +95,7 @@ while i < len(search_keyword):
 
     # make a search keyword  directory
     try:
-        os.makedirs('./tf-files/{}'.format(search_keywords))
+        os.makedirs('../tf-files/{}'.format(search_keywords))
     except OSError as e:
         if e.errno != 17:
             raise
@@ -119,7 +119,7 @@ while i < len(search_keyword):
     # will be created in the same directory as your code. You can comment out
     # the below 3 lines to stop writing the output to the text file.
     # Open the text file called database.txt
-    info = open('./tf-files/output.txt', 'a')
+    info = open('../tf-files/output.txt', 'a')
     # Write the title of the page
     info.write(str(i) + ': ' +
                str(search_keyword[i - 1]) + ": " + str(items) + "\n\n\n")
