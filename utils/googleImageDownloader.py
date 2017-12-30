@@ -6,7 +6,7 @@ import os
 # This list is used to search keywords. You can edit this list to search
 # for google images of your choice. You can simply add and remove elements
 # of the list.
-search_keyword = ['Bill Gates', 'Steve Jobs']
+search_keyword = ['President Donald Trump', 'Prime Minister Justin Trudeau', 'President Xi Jinping', 'Prime Minister Theresa May', 'Chancellor Angela Merkel', 'Prime Minister Charles Michel', 'Malcolm Turnbull', 'Chief Executive Carrie Lam', 'Prime Minister Shinzo Abe', 'President Moon Jae-in', 'Kim Jong-un']
 # This list is used to further add suffix to your search term. Each
 # element of the list will help you download 100 images. First element is
 # blank which denotes that no suffix is added to the search keyword of the
@@ -148,7 +148,7 @@ while i < len(search_keyword):
                     items[k], headers={
                         "User-Agent": "Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.27 Safari/537.17"})
                 response = urllib.request.urlopen(req, None, 15)
-                output_file = open('./tf-files/{}'.format(search_keywords) + "/" +
+                output_file = open('../tf-files/{}'.format(search_keywords) + "/" +
                                    str(k + 1) + ".jpg", 'wb')
                 data = response.read()
                 output_file.write(data)
