@@ -50,8 +50,11 @@ This repository contains the resources needed to successfully classify the faces
  ```
  cd /
  ```
-9) Train the classification model! (This takes some time if you have many images):
- ```
+9) Train the classification model! (This takes some time if you have many images). 
+
+9a) If you don't want to type this into the Docker container, i.e. you you are unable to paste the command below from your local clipboard to the virtualized bash, use the [AHK](https://autohotkey.com/download/) script in `/utils` (autopaste.ahk):
+   - control+m will auto-type the command to train the neural network
+```
  python tensorflow/tensorflow/examples/image_retraining/retrain.py \
     --bottleneck_dir=/bottlenecks \ 
     --model_dir=/inception \
@@ -62,6 +65,10 @@ This repository contains the resources needed to successfully classify the faces
   - You should see Google's Inception CNN begin to download and then training begin.
 
 10) Use the model to predict the name of a world leader using an image in the `/tf-files/images/testing` directory (possible overfitting :grimace:):
+10a) Again, you can use `autopaste.ahk` to test images for you:
+   - control+. will auto-type the command to test the bot against an image of Vladimir Putin
+   - control+, will auto-type the command to test the bot against an image of Donald Trump
+
 ```
 python tensorflow/tensorflow/examples/image_retraining/label_image.py \
  --graph=/retrained_graph.pb \
